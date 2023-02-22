@@ -1,0 +1,89 @@
+@import "../../app.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.navbar {
+    width: 100%;
+    color: white;
+    font-size: 14px;
+    background: linear-gradient(to top, transparent 0%, rgb(0, 0, 0, 0.3) 50%);
+
+    &.scrolled {
+        background-color: black;
+    }
+
+    .title {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 70px;
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            span {
+                margin-right: 20px;
+                cursor: pointer;
+
+                @include tablet {
+                    display: none;
+                }
+
+                &.navbarmainLinks {
+                    @include tablet {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .right {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+
+            svg {
+                cursor: pointer;
+            }
+
+            .icon {
+                margin: 0px 15px;
+                cursor: pointer;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+                border-radius: 5px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            .profile {
+                .options {
+                    display: none;
+                    background-color: black;
+                    border-radius: 5px;
+                }
+
+                span {
+                    padding: 10px;
+                    cursor: pointer;
+                }
+
+                &:hover {
+                    .options {
+                        display: flex;
+                        flex-direction: column;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+    }
+}
